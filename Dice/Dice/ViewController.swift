@@ -14,7 +14,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    func randomDiceValue() -> Int{
+        let randomValue = 1 + arc4random() % 6
+        return Int(randomValue)
+    }
+    
+    @IBAction func rollTheDice(){
+        let controller:DiceViewController
+        controller = storyboard?.instantiateViewController(withIdentifier: "DiceViewController")
+        as! DiceViewController
+        present(controller, animated: true, completion: nil)
+    }
 
 }
 
